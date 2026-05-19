@@ -1,0 +1,15 @@
+Documentatie BBallStore - etapa 2
+
+Schema cromatica:
+- #F3F4F6: fundal deschis, neutru, ca produsele si zonele de continut sa ramana usor de citit.
+- #7F1D1D: culoare principala, rosu inchis, potrivita pentru energia si competitivitatea baschetului.
+- #FACC15: accent galben, asociat cu atentie, actiune si detalii importante din interfata.
+- #1F2937: text principal si zone inchise, folosit pentru contrast si stabilitate vizuala.
+- #FFFFFF: suprafete de continut. Am adaugat aceasta culoare deoarece #F3F4F6 era repetata in lista initiala si era nevoie de o a cincea culoare distincta.
+
+Principii de design folosite:
+- Ierarhie vizuala: zona 1 ocupa primul rand complet si foloseste contrast mare pentru prezentarea magazinului.
+- Grupare: continutul auxiliar este in zona 8, iar informatiile functionale sunt separate in zonele 2-7.
+- Contrast: rosu inchis si gri inchis sunt folosite pentru elemente principale, iar galbenul marcheaza interactiuni.
+- Consistenta: toate zonele gridului folosesc aceleasi valori CSS pentru padding, border, radius si umbra.
+- Responsive: pe ecran mare layoutul respecta harta ceruta, pe ecran mediu se rearanjeaza pe doua coloane, iar pe ecran mic devine o singura coloana.
