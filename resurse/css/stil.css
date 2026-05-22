@@ -238,6 +238,29 @@ figure img {
     display: block;
 }
 
+.playlist-iframe,
+.harta-contact {
+    display: block;
+    width: 100%;
+    min-width: var(--latime-media-min);
+    max-width: var(--latime-media-max);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    margin-top: 0.75rem;
+    border: 0.15rem solid var(--culoare-border);
+    background: var(--culoare-suprafata);
+}
+
+.pdf-bonus {
+    display: block;
+    width: 100%;
+    min-height: 16rem;
+    margin-top: 1rem;
+    border: 0.15rem solid var(--culoare-border);
+    border-radius: var(--raza-zona);
+    background: var(--culoare-suprafata);
+}
+
 .tabel-scroll {
     max-width: 100%;
     overflow-x: auto;
@@ -296,6 +319,16 @@ tfoot tr:hover td {
 
 meter {
     width: min(100%, 14rem);
+}
+
+footer address {
+    margin-bottom: 1rem;
+}
+
+.harta-contact {
+    max-width: 34rem;
+    min-width: 0;
+    margin: 0 0 1rem;
 }
 
 #link-top {
@@ -478,6 +511,7 @@ meter {
     }
 
     .container-iframe iframe,
+    .playlist-iframe,
     figure img {
         min-width: 0;
     }

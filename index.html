@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="resurse/ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="resurse/ico/favicon-16x16.png">
     <link rel="manifest" href="resurse/ico/site.webmanifest">
+    <link rel="stylesheet" href="resurse/css/reset.css">
     <link rel="stylesheet" href="resurse/css/stil.css">
 </head>
 <body id="top">
@@ -105,10 +106,15 @@
                     <picture>
                         <source srcset="resurse/imagini/baschet-mic.jpg" media="(max-width: 700px)">
                         <source srcset="resurse/imagini/baschet-mediu.jpg" media="(max-width: 1100px)">
-                        <img src="resurse/imagini/baschet-mare.jpg" alt="Minge de baschet pe teren" title="Minge de baschet BBallStore">
+                        <img src="resurse/imagini/baschet-mare.jpg" alt="Minge de baschet pe teren" title="Minge de baschet BBallStore" usemap="#harta-baschet">
                     </picture>
                     <figcaption>Minge de baschet folosita pentru prezentarea colectiei BBallStore.</figcaption>
                 </figure>
+                <map name="harta-baschet">
+                    <area shape="circle" coords="700,390,160" href="#colectii" alt="Colectia de mingi baschet" title="Colectia de mingi baschet">
+                    <area shape="rect" coords="0,0,520,780" href="#program" alt="Programul magazinului BBallStore" title="Program magazin">
+                    <area shape="poly" coords="900,110,1320,140,1240,710,850,650" href="#evenimente" alt="Evenimente de baschet" title="Evenimente BBallStore">
+                </map>
                 <p>
                     Deschideti imaginea in dimensiune mare apasand pe previzualizare:
                     <a href="resurse/imagini/baschet-mare.jpg">
@@ -155,6 +161,8 @@
                         <a href="https://www.youtube.com/embed/_Q8obt4xuEw?rel=0" target="ifr-video">Clip initial</a>
                     </div>
                 </div>
+                <h4>Playlist automat</h4>
+                <iframe class="playlist-iframe" width="560" height="315" src="https://www.youtube.com/embed/_Q8obt4xuEw?playlist=EYEHUOpwNvE,_Q8obt4xuEw&amp;loop=1&amp;rel=0&amp;controls=1" title="Playlist automat de baschet" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>
         </section>
 
@@ -253,6 +261,9 @@
                 </mrow>
             </math>
             <p>Cu alte cuvinte, un membru plateste 85% din pretul afisat pentru produsele incluse in promotie.</p>
+            <object class="pdf-bonus" data="resurse/documente/abonament-bballstore.pdf" type="application/pdf">
+                <a href="resurse/documente/abonament-bballstore.pdf">Deschide documentul PDF despre abonamentul BBallStore</a>
+            </object>
         </section>
 
         <section id="utilizatori-online" class="zona-grid">
@@ -283,12 +294,13 @@
             Telefon: <a href="tel:+40721111222">+40&nbsp;721&nbsp;111&nbsp;222</a><br>
             Adresa:
             <a href="https://www.google.com/maps/place/Facultatea+de+Matematica+si+Informatica/@44.4355355,26.0995865,17z/" target="_blank">
-                Strada Terenului nr. 24<br>
+                Strada Academiei nr.14<br>
                 Bucuresti, Romania
             </a><br>
             E-mail: <a href="mailto:contact@bballstore.test">contact@bballstore.test</a><br>
             Chat: <a href="https://wa.me/40721111222">WhatsApp BBallStore</a>
         </address>
+        <iframe class="harta-contact" src="https://www.google.com/maps?q=Facultatea%20de%20Matematica%20si%20Informatica%20Bucuresti&amp;output=embed" title="Harta Facultatea de Matematica si Informatica Bucuresti" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <a id="link-top" href="#top" title="Urca la inceputul paginii" aria-label="Urca la inceputul paginii" data-tooltip="Urca la inceputul paginii"><span>&#8593;</span></a>
         <small>&copy; <time datetime="2026-05-19">19 mai 2026</time> BBallStore. Toate drepturile rezervate.</small>
     </footer>

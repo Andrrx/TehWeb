@@ -15,6 +15,7 @@ const types = {
     ".webmanifest": "application/manifest+json",
     ".xml": "application/xml",
     ".svg": "image/svg+xml",
+    ".pdf": "application/pdf",
     ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 };
 

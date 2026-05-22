@@ -1,0 +1,52 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+ul,
+ol {
+    padding-left: 1.25rem;
+}
+
+img,
+video,
+iframe,
+object,
+embed {
+    max-width: 100%;
+}
+
+table {
+    border-spacing: 0;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+i,
+em {
+    font-style: italic;
+}
