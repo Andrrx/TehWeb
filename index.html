@@ -2,10 +2,11 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Andrei">
+    <meta name="author" content="Tudorache Andrei-Theodor">
     <meta name="keywords" content="BBallStore, baschet, articole sportive, incaltaminte baschet, jersey NBA, minge baschet, accesorii baschet, transport la domiciliu, Bucuresti">
     <meta name="description" content="BBallStore este magazinul dedicat jucatorilor si fanilor de baschet, cu incaltaminte, jersey-uri, mingi si accesorii pentru antrenament sau meci.">
     <meta name="msapplication-TileColor" content="#f15a24">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>BBallStore - articole sportive de baschet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,11 +149,11 @@
                 <h3>Clipuri de antrenament</h3>
                 <div class="container-iframe">
                     <div class="taburi-iframe">
-                        <a href="https://www.youtube.com/embed/_Q8obt4xuEw" target="ifr-video">Dribling baschet</a>
-                        <a href="https://www.youtube.com/embed/mtIdBf_e1NM" target="ifr-video">Antrenament aruncare</a>
-                        <a href="https://www.youtube.com/embed/_Q8obt4xuEw" target="ifr-video">Clip initial</a>
+                        <a href="https://www.youtube.com/embed/_Q8obt4xuEw?rel=0" target="ifr-video">Dribling baschet</a>
+                        <a href="https://www.youtube.com/embed/EYEHUOpwNvE?rel=0" target="ifr-video">Antrenament aruncare</a>
+                        <a href="https://www.youtube.com/embed/_Q8obt4xuEw?rel=0" target="ifr-video">Clip initial</a>
                     </div>
-                    <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/_Q8obt4xuEw" title="Clip video despre baschet" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/_Q8obt4xuEw?rel=0" title="Clip video despre baschet" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </section>
         </section>
@@ -232,7 +233,26 @@
 
         <section id="anunturi" class="zona-grid">
             <h2>Anunturi</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer reducerile de sezon vor fi anuntate aici.</p>
+            <p>Reducerile pentru membri sunt calculate direct din pretul produsului, astfel incat oferta sa fie usor de verificat.</p>
+            <math class="formula-reducere" display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                <mrow>
+                    <msub>
+                        <mi>P</mi>
+                        <mtext>membru</mtext>
+                    </msub>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>85</mn>
+                        <mn>100</mn>
+                    </mfrac>
+                    <mo>&#8290;</mo>
+                    <msub>
+                        <mi>P</mi>
+                        <mtext>produs</mtext>
+                    </msub>
+                </mrow>
+            </math>
+            <p>Cu alte cuvinte, un membru plateste 85% din pretul afisat pentru produsele incluse in promotie.</p>
         </section>
 
         <section id="utilizatori-online" class="zona-grid">
@@ -269,7 +289,7 @@
             E-mail: <a href="mailto:contact@bballstore.test">contact@bballstore.test</a><br>
             Chat: <a href="https://wa.me/40721111222">WhatsApp BBallStore</a>
         </address>
-        <a id="link-top" href="#top" title="Urca la inceputul paginii"><span>&#8593;</span></a>
+        <a id="link-top" href="#top" title="Urca la inceputul paginii" aria-label="Urca la inceputul paginii" data-tooltip="Urca la inceputul paginii"><span>&#8593;</span></a>
         <small>&copy; <time datetime="2026-05-19">19 mai 2026</time> BBallStore. Toate drepturile rezervate.</small>
     </footer>
 </body>
