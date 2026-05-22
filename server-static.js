@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
-const port = Number(process.argv[2] || 5500);
+const port = Number(process.env.PORT || process.argv[2] || 8080);
 const types = {
     ".html": "text/html; charset=utf-8",
     ".png": "image/png",
@@ -41,4 +41,6 @@ http.createServer((req, res) => {
         });
         res.end(data);
     });
-}).listen(port, "127.0.0.1");
+}).listen(port, "127.0.0.1", () => {
+    console.log(`BBallStore static server: http://localhost:${port}`);
+});

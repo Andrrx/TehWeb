@@ -1,0 +1,12 @@
+{
+  "name": "tehweb-bballstore",
+  "version": "1.0.0",
+  "description": "Static BBallStore project for Tehnici Web.",
+  "main": "server-static.js",
+  "scripts": {
+    "start": "node server-static.js",
+    "dev": "node server-static.js 5500"
+  },
+  "author": "Tudorache Andrei-Theodor",
+  "license": "ISC"
+}
