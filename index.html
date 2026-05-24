@@ -18,14 +18,22 @@
     <link rel="manifest" href="resurse/ico/site.webmanifest">
     <link rel="stylesheet" href="resurse/css/reset.css">
     <link rel="stylesheet" href="resurse/css/stil.css">
+    <link rel="stylesheet" href="resurse/css/nav.css">
+    <link rel="stylesheet" href="resurse/css/print.css" media="print">
 </head>
 <body id="top">
     <header>
         <h1><i class="fa-solid fa-basketball"></i> BBallStore <i class="fa-solid fa-basketball fa-bounce"></i></h1>
         <nav>
-            <ul>
+            <label id="hamburger" for="ch-menu" aria-label="Deschide meniul">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <input id="ch-menu" type="checkbox">
+            <ul class="meniu">
                 <li>
-                    <a href="#prezentare">Acasa</a>
+                    <a href="#prezentare"><i class="fa-solid fa-house"></i><span>Acasa</span></a>
                     <ul>
                         <li><a href="#colectii">Colectii</a></li>
                         <li><a href="#evenimente">Evenimente</a></li>
@@ -35,10 +43,17 @@
                         <li><a href="#intrebari">Intrebari</a></li>
                     </ul>
                 </li>
-                <li><a href="#colectii">Produse</a></li>
-                <li><a href="#evenimente">Evenimente</a></li>
-                <li><a href="#program">Program</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#colectii"><i class="fa-solid fa-basket-shopping"></i><span>Produse</span></a>
+                    <ul>
+                        <li><a href="produse.html">Toate produsele</a></li>
+                        <li><a href="promotii.html">Promotii</a></li>
+                        <li><a href="cos.html">Cos virtual</a></li>
+                    </ul>
+                </li>
+                <li><a href="#evenimente"><i class="fa-solid fa-calendar-days"></i><span>Evenimente</span></a></li>
+                <li><a href="#program"><i class="fa-solid fa-clock"></i><span>Program</span></a></li>
+                <li><a href="#contact"><i class="fa-solid fa-address-card"></i><span>Contact</span></a></li>
             </ul>
         </nav>
     </header>
@@ -110,11 +125,11 @@
                     </picture>
                     <figcaption>Minge de baschet folosita pentru prezentarea colectiei BBallStore.</figcaption>
                 </figure>
-                <map name="harta-baschet">
+                <!-- <map name="harta-baschet">
                     <area shape="circle" coords="700,390,160" href="#colectii" alt="Colectia de mingi baschet" title="Colectia de mingi baschet">
                     <area shape="rect" coords="0,0,520,780" href="#program" alt="Programul magazinului BBallStore" title="Program magazin">
                     <area shape="poly" coords="900,110,1320,140,1240,710,850,650" href="#evenimente" alt="Evenimente de baschet" title="Evenimente BBallStore">
-                </map>
+                </map> -->
                 <p>
                     Deschideti imaginea in dimensiune mare apasand pe previzualizare:
                     <a href="resurse/imagini/baschet-mare.jpg">
@@ -253,7 +268,6 @@
                         <mn>85</mn>
                         <mn>100</mn>
                     </mfrac>
-                    <mo>&#8290;</mo>
                     <msub>
                         <mi>P</mi>
                         <mtext>produs</mtext>
@@ -302,6 +316,7 @@
         </address>
         <iframe class="harta-contact" src="https://www.google.com/maps?q=Facultatea%20de%20Matematica%20si%20Informatica%20Bucuresti&amp;output=embed" title="Harta Facultatea de Matematica si Informatica Bucuresti" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <a id="link-top" href="#top" title="Urca la inceputul paginii" aria-label="Urca la inceputul paginii" data-tooltip="Urca la inceputul paginii"><span>&#8593;</span></a>
+        <p id="banner">Acesta este un proiect scolar!</p>
         <small>&copy; <time datetime="2026-05-19">19 mai 2026</time> BBallStore. Toate drepturile rezervate.</small>
     </footer>
 </body>

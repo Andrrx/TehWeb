@@ -526,7 +526,8 @@ footer address {
         table-layout: auto;
     }
 
-    * {
+    main *,
+    footer * {
         transition: none !important;
         animation: none !important;
     }

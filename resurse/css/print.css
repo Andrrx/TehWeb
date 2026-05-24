@@ -1,0 +1,121 @@
+@page:left {
+    margin-left: 3cm;
+    margin-right: 1cm;
+}
+
+@page:right {
+    margin-left: 1cm;
+    margin-right: 3cm;
+}
+
+@media print {
+    body {
+        position: relative;
+        background: white;
+        color: black;
+        font-family: Georgia, "Times New Roman", serif;
+    }
+
+    body::before {
+        content: "Acesta este un proiect scolar!";
+        position: absolute;
+        left: 15%;
+        top: 25cm;
+        width: 70%;
+        padding: 0.25cm 0;
+        border: 4px inset black;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    body::after {
+        content: "Tudorache\A Andrei-Theodor";
+        white-space: pre;
+        position: fixed;
+        right: 0.5cm;
+        bottom: 0.5cm;
+        width: 4cm;
+        height: 1cm;
+        border: 3px solid black;
+        border-radius: 0.25cm;
+        opacity: 0.4;
+        font-weight: 700;
+        text-align: center;
+        line-height: 0.48cm;
+    }
+
+    header,
+    footer,
+    .zona-grid {
+        background: transparent !important;
+        color: black !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    nav {
+        page-break-after: always;
+    }
+
+    nav #hamburger,
+    nav #ch-menu {
+        display: none !important;
+    }
+
+    nav .meniu {
+        display: block !important;
+        padding-left: 1.5rem;
+    }
+
+    nav .meniu > li {
+        display: list-item;
+        margin: 0.25rem 0;
+    }
+
+    nav .meniu > li > a {
+        display: inline;
+    }
+
+    nav .meniu > li > ul {
+        display: none !important;
+    }
+
+    #grid-pagina {
+        display: block !important;
+        padding: 0;
+    }
+
+    figure,
+    figcaption,
+    picture,
+    img,
+    iframe,
+    video,
+    object,
+    embed,
+    .container-iframe,
+    .playlist-iframe,
+    .harta-contact,
+    .pdf-bonus,
+    #link-top {
+        display: none !important;
+    }
+
+    a,
+    a:visited {
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+    footer {
+        page-break-before: always;
+    }
+
+    #banner {
+        display: none;
+    }
+}

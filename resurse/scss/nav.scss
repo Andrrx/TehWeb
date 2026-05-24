@@ -1,0 +1,312 @@
+$inaltime-meniu: 2.75rem;
+$latime-buton: 9.25rem;
+$durata: 0.45s;
+$delay-hamburger: 180ms;
+
+@mixin fara-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin buton-meniu($fundal, $text) {
+    background: $fundal;
+    color: $text;
+}
+
+%link-meniu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-height: $inaltime-meniu;
+    padding: 0 0.75rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav {
+    position: relative;
+    z-index: 30;
+
+    #ch-menu,
+    #hamburger {
+        display: none;
+    }
+
+    .meniu {
+        @include fara-lista;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+
+        li {
+            position: relative;
+            min-width: $latime-buton;
+
+            a {
+                @extend %link-meniu;
+                @include buton-meniu(var(--culoare-text), var(--culoare-suprafata));
+                overflow: hidden;
+                border: 0.05rem solid var(--culoare-accent);
+                text-shadow: 0 (-$inaltime-meniu) 0 color-mix(in srgb, var(--culoare-accent) 80%, var(--culoare-suprafata));
+                transition:
+                    background-color $durata ease,
+                    color $durata ease,
+                    text-shadow $durata ease;
+
+                i {
+                    font-size: 1.05em;
+                }
+
+                &:hover,
+                &:focus-visible {
+                    @include buton-meniu(var(--culoare-accent), var(--culoare-text));
+                    text-shadow: 0 0 0 var(--culoare-text);
+                }
+            }
+
+            ul {
+                @include fara-lista;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                min-width: 100%;
+                transform: scaleY(0);
+                transform-origin: top;
+                opacity: 0;
+                transition:
+                    transform $durata ease,
+                    opacity $durata ease;
+
+                li {
+                    min-width: 12rem;
+
+                    a {
+                        justify-content: flex-start;
+                        position: relative;
+                        background: var(--culoare-principala);
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 0.75rem;
+                            right: 0.75rem;
+                            bottom: 0.35rem;
+                            height: 0.12rem;
+                            background: var(--culoare-accent);
+                            transform: scaleX(0);
+                            transform-origin: center;
+                            transition: transform $durata ease;
+                        }
+
+                        &:hover,
+                        &:focus-visible {
+                            background: color-mix(in srgb, var(--culoare-principala) 70%, var(--culoare-text));
+
+                            &::after {
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover > ul,
+            &:focus-within > ul {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    nav {
+        .meniu {
+            li {
+                min-width: 4.5rem;
+
+                > a {
+                    padding-inline: 0.5rem;
+
+                    span {
+                        position: absolute;
+                        width: 1px;
+                        height: 1px;
+                        overflow: hidden;
+                        clip-path: inset(50%);
+                        white-space: nowrap;
+                    }
+
+                    i {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                ul li a span {
+                    position: static;
+                    width: auto;
+                    height: auto;
+                    overflow: visible;
+                    clip-path: none;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}
+
+@keyframes hamburger-bara {
+    0% {
+        opacity: 0;
+        background: var(--culoare-principala);
+        transform: translateX(-0.8rem) scaleX(0.4);
+    }
+
+    55% {
+        opacity: 0.65;
+        background: var(--culoare-accent);
+        transform: translateX(0.2rem) scaleX(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        background: var(--culoare-suprafata);
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+@keyframes aparitie-meniu {
+    0% {
+        opacity: 0;
+        transform: scaleY(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes litere-meniu {
+    0% {
+        letter-spacing: -0.35em;
+        opacity: 0;
+    }
+
+    45% {
+        letter-spacing: 0.12em;
+        opacity: 0.8;
+    }
+
+    100% {
+        letter-spacing: 0;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    nav {
+        #hamburger {
+            display: block;
+            position: relative;
+            width: 2.6rem;
+            height: 2.25rem;
+            cursor: pointer;
+
+            span {
+                position: absolute;
+                left: 0.25rem;
+                width: 2rem;
+                height: 0.24rem;
+                border-radius: 999px;
+                background: var(--culoare-suprafata);
+                animation: hamburger-bara 0.7s ease both;
+            }
+
+            @for $i from 1 through 3 {
+                span:nth-child(#{$i}) {
+                    top: 0.32rem + (($i - 1) * 0.68rem);
+                    animation-delay: ($i - 1) * $delay-hamburger;
+                }
+            }
+        }
+
+        .meniu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--culoare-text);
+
+            li {
+                min-width: 100%;
+
+                > a {
+                    justify-content: center;
+                    padding-inline: 1rem;
+                    text-shadow: none;
+                    transition: background-color $durata ease, color $durata ease;
+
+                    span {
+                        position: static;
+                        width: auto;
+                        height: auto;
+                        overflow: visible;
+                        clip-path: none;
+                        white-space: normal;
+                    }
+
+                    &:hover,
+                    &:focus-visible {
+                        text-shadow: none;
+                    }
+                }
+
+                &:first-child > a span {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    overflow: hidden;
+                    clip-path: inset(50%);
+                    white-space: nowrap;
+                }
+
+                ul {
+                    position: static;
+                    transform: scaleY(1);
+                    opacity: 1;
+                    display: none;
+
+                    li a {
+                        padding-left: 2.25rem;
+                        justify-content: center;
+                        background: color-mix(in srgb, var(--culoare-principala) 80%, var(--culoare-text));
+                    }
+                }
+
+                &:hover > ul,
+                &:focus-within > ul {
+                    display: block;
+                }
+            }
+        }
+
+        #ch-menu:checked + .meniu {
+            display: block;
+            animation: aparitie-meniu 0.65s ease both;
+
+            a {
+                animation: litere-meniu 0.75s ease both;
+            }
+
+            @for $i from 1 through 5 {
+                > li:nth-child(#{$i}) > a {
+                    animation-delay: ($i - 1) * 90ms;
+                }
+            }
+        }
+    }
+}
